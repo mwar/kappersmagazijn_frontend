@@ -4,6 +4,13 @@ body {
   padding: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 a {
   color: color(primary);
   position: relative;

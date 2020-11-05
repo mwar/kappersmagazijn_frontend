@@ -5,7 +5,7 @@
       :class="{ 'is-visible': navVisible }"
     >
       <div class="container">
-        <div class="row pt16 pb16">
+        <div class="row pt16 pb16 middle-xs">
           <div class="col-xs-6 col-md-2">
             <div>
               <logo width="auto" height="59px" />
@@ -13,15 +13,16 @@
           </div>
           <div class="col-xs-12 col-md-6">
             <div class="search-input">
-              <input type="text" placeholder="waar ber ben je naar op zoek?" />
+              <input type="text" placeholder="waar ben je naar op zoek?" :aria-label="$t('Open search panel')" @focus="toggleSearchpanel" data-testid="openSearchPanel">
             </div>
           </div>
           <div class="col-xs-6 col-md-4">
-            <search-icon class="p15 icon hidden-xs pointer" />
-            <wishlist-icon class="p15 icon hidden-xs pointer" />
-            <compare-icon class="p15 icon hidden-xs pointer" />
-            <microcart-icon class="p15 icon pointer" />
-            <account-icon class="p15 icon hidden-xs pointer" />
+            <ul class="header-menu">
+              <li><commercial-icon /></li>
+              <li><account-icon /></li>
+              <li><wishlist-icon /></li>
+              <li><microcart-icon /></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -38,7 +39,7 @@ import CompareIcon from 'theme/components/core/blocks/Header/CompareIcon'
 import HamburgerIcon from 'theme/components/core/blocks/Header/HamburgerIcon'
 import Logo from 'theme/components/core/Logo'
 import MicrocartIcon from 'theme/components/core/blocks/Header/MicrocartIcon'
-import SearchIcon from 'theme/components/core/blocks/Header/SearchIcon'
+import CommercialIcon from 'theme/components/core/blocks/Header/CommercialIcon'
 import WishlistIcon from 'theme/components/core/blocks/Header/WishlistIcon'
 
 export default {
@@ -46,10 +47,10 @@ export default {
   components: {
     AccountIcon,
     CompareIcon,
-    HamburgerIcon,
+    // HamburgerIcon,
     Logo,
     MicrocartIcon,
-    SearchIcon,
+    CommercialIcon,
     WishlistIcon
   },
   mixins: [CurrentPage],
@@ -104,6 +105,9 @@ export default {
         this.navVisible = true
       }
       this.lastScrollTop = this.scrollTop
+    },
+    toggleSearchpanel () {
+      this.$store.commit('ui/setSearchpanel', true)
     }
   }
 }
@@ -125,14 +129,61 @@ header {
   }
 
   .search-input {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('/assets/icons/search-regular.svg');
+      background-size: 24px;
+      height: 24px;
+      width: 24px;
+      right: 20px;
+      top: calc(50% - 12px);
+    }
+
     input {
       display: block;
       width: 100%;
-      height: 42px;
+      height: 40px;
       border: 1px solid #BBCCDD;
       border-radius: 6px;
-      padding: 13px 20px;
+      padding: 0 20px;
+      font-size: 1rem;
+      line-height: 19px;
+      font-family: 'Cabin', sans-serif;
+
+      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #BBCCDD;
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #BBCCDD;
+      }
+
+      &::-ms-input-placeholder { /* Microsoft Edge */
+        color: #BBCCDD;
+      }
     }
   }
+
+  ul.header-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-left: 2rem;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+.header-placeholder {
+  height: 130px;
 }
 </style>

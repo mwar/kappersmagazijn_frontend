@@ -1,6 +1,6 @@
 <template>
   <div
-    class="inline-flex relative dropdown"
+    class="dropdown"
     data-testid="accountButton"
     @click.self="goToAccount();showMenu = true;"
     @keyup.enter="goToAccount"
@@ -10,11 +10,9 @@
     @mouseout="showMenu = false"
     :aria-label="$t('Open my account')"
   >
-    <button
-      type="button"
-      class="bg-cl-transparent brdr-none p0"
-    >
-      <i class="material-icons block">account_circle</i>
+    <button type="button">
+      <i class="account" />
+      <span>Account</span>
     </button>
 
     <no-ssr>
@@ -80,6 +78,7 @@ export default {
 $color-icon-hover: color(secondary, $colors-background);
 
 .dropdown {
+  cursor: pointer;
 
   button {
     pointer-events: none;
@@ -120,6 +119,28 @@ $color-icon-hover: color(secondary, $colors-background);
       }
     }
   }
+}
 
+button {
+  color: #504538;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  i.account {
+    display: block;
+    background-image: url(/assets/icons/user-alt-light.svg);
+    background-size: 28px;
+    height: 28px;
+    width: 28px;
+    background-repeat: no-repeat;
+    margin: 0 auto 5px auto;
+  }
+
+  span {
+    font-size: 12px;
+    line-height: 15px;
+    color: #504538;
+  }
 }
 </style>

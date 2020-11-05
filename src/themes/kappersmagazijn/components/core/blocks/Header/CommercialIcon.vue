@@ -1,17 +1,17 @@
 <template>
-  <a href="#" target="_blank"><i class="cart" /><span>Winkelwagen</span></a>
+  <a href="#" target="_blank"><i class="commercial" /><span>Zakelijk</span></a>
 </template>
 
 <style lang="scss" scoped>
   a {
     color: #504538;
 
-    i.cart {
+    i.commercial {
       display: block;
-      background-image: url(/assets/icons/shopping-bag-light.svg);
-      background-size: 24.5px 28px;
-      height: 28px;
-      width: 24.5px;
+      background-image: url(/assets/icons/handshake-alt-light.svg);
+      background-size: 40px 24px;
+      height: 24px;
+      width: 40px;
       background-repeat: no-repeat;
       margin: 0 auto 5px auto;
     }

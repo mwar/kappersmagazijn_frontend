@@ -1,36 +1,25 @@
 <template>
-  <button
-    type="button"
-    class="inline-flex bg-cl-transparent brdr-none relative"
-    @click="toggleWishlistPanel"
-    data-testid="wishlist-icon"
-    :aria-label="$t('Open wishlist')"
-  >
-    <i class="material-icons">favorite_border</i>
-    <span
-      class="whishlist-count absolute flex center-xs middle-xs border-box py0 px2 h6 lh16 weight-700 cl-white bg-cl-silver"
-      v-cloak
-      v-show="getWishlistItemsCount"
-    >
-      {{ getWishlistItemsCount }}
-    </span>
-  </button>
+  <a href="#" target="_blank"><i class="wishlist" /><span>Favorieten</span></a>
 </template>
 
-<script>
-import WishlistIcon from '@vue-storefront/core/compatibility/components/blocks/Header/WishlistIcon'
+<style lang="scss" scoped>
+  a {
+    color: #504538;
 
-export default {
-  mixins: [WishlistIcon]
-}
-</script>
+    i.wishlist {
+      display: block;
+      background-image: url(/assets/icons/heart-light.svg);
+      background-size: 27.5px 24px;
+      height: 24px;
+      width: 27.5px;
+      background-repeat: no-repeat;
+      margin: 0 auto 5px auto;
+    }
 
-<style scoped>
-  .whishlist-count {
-    top: 7px;
-    left: 50%;
-    min-width: 16px;
-    min-height: 16px;
-    border-radius: 10px;
+    span {
+      font-size: 12px;
+      line-height: 15px;
+      color: #504538;
+    }
   }
 </style>

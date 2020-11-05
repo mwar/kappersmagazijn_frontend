@@ -25,7 +25,7 @@ export default {
     { rel: 'apple-touch-startup-image', href: '/assets/apple_splash_750.png', sizes: '750x1334' },
     { rel: 'apple-touch-startup-image', href: '/assets/apple_splash_640.png', sizes: '640x1136' },
     { rel: 'manifest', href: '/assets/manifest.json' },
-    { rel: 'stylesheet', as: 'style', href: 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:400,700|Material+Icons&display=swap' },
+    { rel: 'stylesheet', as: 'style', href: 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Material+Icons&display=swap' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com/', crossorigin: 'anonymous' }
   ],
   script: [
@@ -37,6 +37,6 @@ export default {
     }
   ],
   noscript: [
-    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:400,700|Material+Icons&display=swap' }
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Material+Icons&display=swap' }
   ]
 }
