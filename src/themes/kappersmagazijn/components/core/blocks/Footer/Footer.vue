@@ -1,6 +1,5 @@
 <template>
   <footer :class="{ 'brdr-top-1 brdr-cl-secondary': isCheckoutPage }">
-    <hr>
     <div class="footer-contact flex pt30 pb60 px40 bg-cl-secondary container"
          v-if="!isCheckoutPage">
       <div class="container">
@@ -18,7 +17,7 @@
     </div>
 
     <div
-      class="footer-links flex pt30 pb60 px40 bg-cl-secondary" style="border: 1px solid blue"
+      class="footer-links flex pt30 pb60 px40 bg-cl-secondary"
       v-if="!isCheckoutPage"
     >
       <div class="container" style="border: 1px solid green">
@@ -148,34 +147,43 @@
     </div>
     <div class="container">
       <div class="row middle-xs px15 bottom-links">
-        <div class="col-xs-5 col-sm-3 cl-tertiary">
-          <language-switcher v-if="multistoreEnabled"/>
-        </div>
-        <div class="col-xs col-sm-9 end-xs">
-          <ul class="pl0 links" data-testid="bottomLinks">
-            <li class="footer__version-info">
-              {{ getVersionInfo }}
-            </li>
-            <li class="inline-flex">
-              <router-link
-                class="cl-tertiary mr10 underline"
-                to="/legal"
-                exact
-              >
-                {{ $t('Legal notice') }}
-              </router-link>
-            </li>
-            <li class="inline-flex">
-              <router-link
-                class="cl-tertiary underline"
-                to="/privacy"
-                exact
-              >
-                {{ $t('Privacy policy') }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
+        <!--        <div class="col-xs-5 col-sm-3 cl-tertiary">-->
+        <!--          <language-switcher v-if="multistoreEnabled"/>-->
+        <!--        </div>-->
+        <ul class="links" data-testid="bottomLinks">
+          <li class="footer__version-info">
+            {{ getVersionInfo }}
+          </li>
+
+          <li class="inline-flex">
+            <router-link class="cl-tertiary" :to="getLinkFor('/terms-and-condition')" exact>
+              {{ $t('Terms and condition') }}
+            </router-link>
+          </li>
+
+          <li class="inline-flex">
+            <router-link class="cl-tertiary" :to="getLinkFor('/privacy')" exact>
+              {{ $t('Privacy statement') }}
+            </router-link>
+          </li>
+
+          <li class="inline-flex">
+            <router-link class="cl-tertiary" :to="getLinkFor('/cookies')" exact>
+              {{ $t('Cookies') }}
+            </router-link>
+          </li>
+
+          <li class="inline-flex">
+            <router-link class="cl-tertiary" :to="getLinkFor('/sitemap')" exact>
+              {{ $t('Sitemap') }}
+            </router-link>
+          </li>
+
+
+          <li class="inline-flex">
+            &copy; 2010-{{ new Date().getFullYear() }} {{ storename }}
+          </li>
+        </ul>
       </div>
     </div>
     <back-to-top bottom="20px" right="20px" visibleoffset="200">
@@ -258,34 +266,41 @@ $color-secondary: color(secondary);
   background-color: #fff;
 }
 
-.links {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-  }
-}
-
 .bottom-links {
-  @media (max-width: 767px) {
-    padding: 0;
+  position: relative;
+  margin: 1em;
+  overflow: hidden;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -1px;
+
+    li {
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: .25em 0;
+      padding: 0 .50em;
+      text-align: center;
+
+      &:not(:first-child) {
+        border-left: 1px solid #ccc;
+      }
+    }
   }
 }
 
-.footer__version-info {
-  display: flex;
-  color: $color-secondary;
-  font-size: 0.7rem;
-  @media (min-width: 768px) {
-    margin-right: 1rem;
-    font-size: 0.8rem;
-  }
-}
+//.footer__version-info {
+//  display: flex;
+//  color: $color-secondary;
+//  font-size: 0.7rem;
+//  @media (min-width: 768px) {
+//    margin-right: 1rem;
+//    font-size: 0.8rem;
+//  }
+//}
 
 .underline {
   &:hover {
