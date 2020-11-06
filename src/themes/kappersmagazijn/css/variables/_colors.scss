@@ -49,7 +49,7 @@ $colors-theme: (
 
 $colors-border: (
   primary: map-get($colors, silver),
-  secondary: map-get($colors, gainsboro),
+  secondary: map-get($colors, white),
 );
 
 $colors-background: (
@@ -58,8 +58,8 @@ $colors-background: (
     hover: map-get($colors, silver)
   ),
   secondary: (
-    default: map-get($colors, white-smoke),
-    hover: map-get($colors, gainsboro)
+    default: map-get($colors, brown),
+    hover: map-get($colors, brown)
   ),
-  tertiary: map-get($colors, suva-gray)
+  tertiary: map-get($colors, lighter-brown),
 );
