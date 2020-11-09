@@ -1,8 +1,7 @@
 <template>
   <div id="home">
-    <head-image />
-
-    <promoted-offers />
+    <featuredCategories />
+    <featuredProducts />
 
     <section class="new-collection container px15">
       <div>
@@ -51,6 +50,8 @@ import { mapGetters } from 'vuex'
 import config from 'config'
 import { registerModule } from '@vue-storefront/core/lib/modules'
 import { RecentlyViewedModule } from '@vue-storefront/core/modules/recently-viewed'
+import featuredCategories from 'theme/components/theme/blocks/Home/featuredCategories'
+import featuredProducts from 'theme/components/theme/blocks/Home/featuredProducts'
 
 export default {
   data () {
@@ -59,10 +60,10 @@ export default {
     }
   },
   components: {
-    HeadImage,
     Onboard,
     ProductListing,
-    PromotedOffers,
+    featuredCategories,
+    featuredProducts,
     TileLinks,
     LazyHydrate
   },

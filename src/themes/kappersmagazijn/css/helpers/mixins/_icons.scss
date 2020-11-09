@@ -1,0 +1,7 @@
+@mixin create-icon($width, $height, $icon) {
+  background-image: url("/assets/icons/#{$icon}.svg");
+  background-size: $width $height;
+  height: $height;
+  width: $width;
+  display: block;
+}

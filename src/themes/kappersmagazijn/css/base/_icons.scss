@@ -24,3 +24,29 @@
 //   -webkit-font-feature-settings: 'liga';
 //   -webkit-font-smoothing: antialiased;
 // }
+
+i.chair-mirror {
+    @include create-icon(55px, 75px, 'chair-and-mirror-of-hair-salon');
+}
+
+i.hairdyer-comb {
+    @include create-icon(61.44px, 75px, 'hairdryer-and-comb');
+}
+
+i.shaver {
+    @include create-icon(27.4px, 75px, 'shaver');
+}
+
+i.spray-bottle {
+    @include create-icon(49.26px, 75px, 'hair-salon-spray-bottle-silhouette');
+}
+
+i.spray-bottle-can {
+    @include create-icon(61.73px, 75px, 'hair-salon-spray-bottle-and-can');
+
+}
+
+i.sale-tag {
+    @include create-icon(68px, 75px, 'sale-tag');
+
+}
