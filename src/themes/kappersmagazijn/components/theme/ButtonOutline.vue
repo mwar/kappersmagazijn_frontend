@@ -2,7 +2,7 @@
   <component
     :is="compontentType"
     :to="redirectionLink"
-    class="button-outline no-outline py15 bg-cl-transparent h4 no-underline sans-serif fs-medium"
+    class="button-outline no-outline py15 bg-cl-transparent h4 no-underline fs-medium"
     :class="{
       light : color === 'light', 'brdr-white' : color === 'light', 'cl-white' : color === 'light',
       dark : color === 'dark', 'brdr-darkgray' : color === 'dark', 'cl-secondary' : color === 'dark',
@@ -47,11 +47,13 @@ export default {
 @import "~theme/css/helpers/functions/color";
 $dark-border: color(secondary);
 $white: color(white);
-$black: color(black);
+$black: color(orange-brown);
 
 .button-outline {
   border: 2px solid;
   height: 62px;
+  font-size: 14px;
+  padding:10px 15px;
 }
 
 @media screen and (min-width: 900px) {

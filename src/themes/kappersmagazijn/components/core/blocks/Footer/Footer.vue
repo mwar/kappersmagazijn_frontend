@@ -1,18 +1,13 @@
 <template>
   <footer :class="{ 'brdr-top-1 brdr-cl-secondary': isCheckoutPage }">
-    <div class="footer-contact flex pt30 pb60 px40 container"
+    <div class="footer-contact"
          v-if="!isCheckoutPage">
-      <div class="container">
-        <div class="row m0 center-xs between-md">
-          <!-- TODO nieuwsbrief -->
-          <!--          <newsletter class="flex" style="border: 1px solid red;"/>-->
-          <footer-contact-icon class="col-md-3 col-md-offset-3" title="Bel ons" description="050 1234 567"
-                               url="tel:+3112345678" icon="/assets/icons/search-regular.svg"/>
-          <footer-contact-icon class="col-md-3" title="E-mail ons" description="Stel hier je vraag" url="/contact"
-                               icon="/assets/icons/search-regular.svg"/>
-          <footer-contact-icon class="col-md-3 cl-primary" title="Whatsapp ons" description="Stel hier je vraag"
-                               url="/contact"
-                               icon="/assets/icons/search-regular.svg"/>
+      <div class="container-fluid">
+        <div class="row m40 center-xs between-md">
+          <newsletter class="col-md-3 col-xs-12 col-sm-6" />
+          <footer-email class="col-md-2 col-xs-12 col-sm-6" />
+          <footer-call-us class="col-md-2 col-xs-12 col-sm-6" />
+          <footer-message-us class="col-md-2 col-xs-12 col-sm-6 align-right" />
         </div>
       </div>
     </div>
@@ -231,6 +226,9 @@ import FooterContactIcon from 'theme/components/core/blocks/Footer/FooterContact
 import BackToTop from 'theme/components/core/BackToTop'
 import { getPathForStaticPage } from 'theme/helpers'
 import config from 'config'
+import FooterEmail from './FooterEmail'
+import FooterCallUs from './FooterCallUs'
+import FooterMessageUs from './FooterMessageUs'
 
 export default {
   mixins: [CurrentPage],
@@ -255,6 +253,9 @@ export default {
     }
   },
   components: {
+    FooterMessageUs,
+    FooterCallUs,
+    FooterEmail,
     Newsletter,
     FooterContactIcon,
     LanguageSwitcher,
@@ -403,6 +404,9 @@ $color-white: color(white-smoke);
 
   .footer-links {
     padding-bottom: 30px;
+  }
+  .newsletter, .footer-email, .footer-message-us, .footer-call-us {
+    margin: 35px 40px;
   }
 }
 </style>
