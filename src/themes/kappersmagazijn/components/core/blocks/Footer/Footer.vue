@@ -222,7 +222,6 @@ import { localizedRoute } from '@vue-storefront/core/lib/multistore'
 import CurrentPage from 'theme/mixins/currentPage'
 import LanguageSwitcher from '../../LanguageSwitcher.vue'
 import Newsletter from 'theme/components/core/blocks/Footer/Newsletter'
-import FooterContactIcon from 'theme/components/core/blocks/Footer/FooterContactIcon'
 import BackToTop from 'theme/components/core/BackToTop'
 import { getPathForStaticPage } from 'theme/helpers'
 import config from 'config'
@@ -257,7 +256,6 @@ export default {
     FooterCallUs,
     FooterEmail,
     Newsletter,
-    FooterContactIcon,
     LanguageSwitcher,
     BackToTop
   }
