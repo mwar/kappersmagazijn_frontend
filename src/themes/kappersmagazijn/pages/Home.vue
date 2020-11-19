@@ -3,6 +3,32 @@
     <featuredCategories />
     <featuredProducts />
 
+    <section class="content-section">
+      <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-offset-2 col-md-4">
+            <div class="image-container">
+                    <img
+                    src="https://picsum.photos/1200/1200"
+                    alt="Productnaam"
+                    class="product-image">
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <h3>De beste kappersproducten voor de laagste prijs</h3>
+
+            <p>Door ons uitgebreide scala aan exclusieve merken met internationale bekendheid, heeft Kappersmagazijn zich ontwikkeld tot een ware trendsetter.</p>
+
+            <p>Daarnaast onderscheidt Kappersmagazijn zich door kwaliteit, service en snelle levering. Hierdoor zijn wij al jaren een betrouwbare groothandel in kappersproducten met een zeer divers klantenbestand. Van de grote kapsalons, voor wie wij leverancier zijn van kappersstoelen tot gel, maar daarnaast ook de particulier die maandelijks zijn shampoos bij ons besteld.</p>
+
+            <p>Kappersmagazijn wil namelijk iedereen het voordeel gunnen van haar topmerken en producten, zonder hierop een doelgroep uit te sluiten zoals de meeste groothandels. Immers als u tevreden bent, zijn wij dat ook.</p>
+
+            <p>Mocht u ondanks de zorgvuldige samenstelling van deze webshop, toch nog vragen hebben over Kappersmagazijn of één van onze producten, neem dan gerust contact met ons op.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="new-collection container px15">
       <div>
         <header class="col-md-12">
@@ -138,6 +164,25 @@ export default {
   .new-collection {
     @media (max-width: 767px) {
       padding-top: 0;
+    }
+  }
+
+  section.content-section {
+    padding: 64px 0;
+
+    h3 {
+      font-weight: bold;
+    }
+
+    .image-container {
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+      }
     }
   }
 </style>

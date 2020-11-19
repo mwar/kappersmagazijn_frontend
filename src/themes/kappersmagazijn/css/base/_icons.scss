@@ -48,5 +48,8 @@ i.spray-bottle-can {
 
 i.sale-tag {
     @include create-icon(68px, 75px, 'sale-tag');
+}
 
+i.favorites {
+    @include create-icon(24px, 21px, 'favorites');
 }
