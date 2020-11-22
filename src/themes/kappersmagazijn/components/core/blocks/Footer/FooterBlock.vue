@@ -1,5 +1,5 @@
 <template>
-  <footer-links>
+  <div class="footer-block">
     <h5 :class="{ active: isActive }" @click="isActive = !isActive">
       {{ title }}
     </h5>
@@ -9,7 +9,7 @@
         List
       </slot>
     </div>
-  </footer-links>
+  </div>
 </template>
 
 <script>
@@ -18,8 +18,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: false,
-      default: 'title'
+      required: true
     }
   },
   data: function () {
@@ -54,7 +53,7 @@ ul {
 }
 
 @media screen and (max-width: 768px) {
-  .footer-links {
+  .footer-block {
     width: 100%;
     padding: 2px 0;
     margin-bottom: 10px;
@@ -79,6 +78,7 @@ ul {
       cursor: pointer;
       filter: invert(24%) sepia(33%) saturate(318%) hue-rotate(352deg) brightness(98%) contrast(90%);
     }
+
     &.active {
       &::after {
         transform: rotate(180deg);
@@ -94,8 +94,9 @@ ul {
 
     li {
       a {
-        color:$color-white;
+        color: $color-white;
       }
+
       padding: 2px 10px;
     }
   }

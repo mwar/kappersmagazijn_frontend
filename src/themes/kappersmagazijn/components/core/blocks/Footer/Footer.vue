@@ -28,19 +28,20 @@
       <div class="container">
         <div class="row m0 center-xs between-md footer-link-bar">
           <div class="m0 col-xs-12 col-sm-3">
-            <footer-links>
+            <footer-block :title="$t('Customer Service')">
+              <cms-block :identifier="'porto_footer_links'" />
               <ul>
                 <li>
-                  <a href="#">Veel gestelde vragenAAA</a>
+                  <a href="#">Veel gestelde vragen</a>
                 </li>
                 <li><a href="#">Acties</a></li>
                 <li><a href="#">Nieuwsbrief</a></li>
                 <li><a href="#">Contact</a></li>
               </ul>
-            </footer-links>
+            </footer-block>
           </div>
           <div class="row m0 col-xs-12 col-sm-3">
-            <footer-links title="Andere tekst">
+            <footer-block :title="$t('Customer Service')">
               <!-- BEGIN CMS BLOK -->
               <ul>
                 <li>
@@ -50,10 +51,10 @@
                 <li><a href="#">Nieuwsbrief</a></li>
                 <li><a href="#">Contact</a></li>
               </ul> <!-- EINDE CMS BLOK -->
-            </footer-links>
+            </footer-block>
           </div>
           <div class="row m0 col-xs-12 col-sm-3">
-            <footer-links title="OVer ons">
+            <footer-block :title="$t('About Us')">
               <!-- BEGIN CMS BLOK -->
               <ul>
                 <li>
@@ -63,7 +64,7 @@
                 <li><a href="#">Nieuwsbrief</a></li>
                 <li><a href="#">Contact</a></li>
               </ul> <!-- EINDE CMS BLOK -->
-            </footer-links>
+            </footer-block>
           </div>
           <div class="row m0 col-xs-12 col-sm-3">
             <h5>{{ $t('Onze gegevens') }}</h5>
@@ -255,10 +256,11 @@ import FooterContactIcon from 'theme/components/core/blocks/Footer/FooterContact
 import BackToTop from 'theme/components/core/BackToTop'
 import { getPathForStaticPage } from 'theme/helpers'
 import config from 'config'
-import FooterLinks from './FooterLinks';
+import FooterBlock from './FooterBlock';
+import CmsBlock from '../Cms/Block';
 
 export default {
-  mixins: [CurrentPage],
+  mixins: [CurrentPage, CmsBlock],
   name: 'MainFooter',
 
   methods: {
@@ -281,7 +283,8 @@ export default {
     }
   },
   components: {
-    FooterLinks,
+    CmsBlock,
+    FooterBlock,
     Newsletter,
     FooterContactIcon,
     LanguageSwitcher,
