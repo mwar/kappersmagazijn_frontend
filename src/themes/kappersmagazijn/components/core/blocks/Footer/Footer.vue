@@ -27,7 +27,7 @@
     >
       <div class="container">
         <div class="row m0 center-xs between-md footer-link-bar">
-          <div class="m0 col-xs-12 col-sm-3">
+          <div class="m0 col-xs-12 col-md-6 col-sm-3">
             <footer-block :title="$t('Customer Service')">
               <cms-block :identifier="'porto_footer_links'" />
               <ul>
@@ -40,7 +40,7 @@
               </ul>
             </footer-block>
           </div>
-          <div class="row m0 col-xs-12 col-sm-3">
+          <div class="row m0 col-xs-12 col-md-6 col-sm-3">
             <footer-block :title="$t('Customer Service')">
               <!-- BEGIN CMS BLOK -->
               <ul>
@@ -53,7 +53,7 @@
               </ul> <!-- EINDE CMS BLOK -->
             </footer-block>
           </div>
-          <div class="row m0 col-xs-12 col-sm-3">
+          <div class="row m0 col-xs-12 col-md-6 col-sm-3">
             <footer-block :title="$t('About Us')">
               <!-- BEGIN CMS BLOK -->
               <ul>
@@ -66,7 +66,7 @@
               </ul> <!-- EINDE CMS BLOK -->
             </footer-block>
           </div>
-          <div class="row m0 col-xs-12 col-sm-3">
+          <div class="row m0 col-xs-12 col-md-6 col-sm-3">
             <h5>{{ $t('Onze gegevens') }}</h5>
             <!-- BEGIN CMS BLOK -->
             <p>
