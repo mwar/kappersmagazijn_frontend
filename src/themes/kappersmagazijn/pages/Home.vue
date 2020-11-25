@@ -7,9 +7,9 @@
       <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-offset-2 col-md-4">
-            <div class="image-container">
+            <div class="image-container pr20">
                     <img
-                    src="https://picsum.photos/1200/1200"
+                    src="https://picsum.photos/1200/900"
                     alt="Productnaam"
                     class="product-image">
             </div>
@@ -29,7 +29,11 @@
       </div>
     </section>
 
-    <section class="new-collection container px15">
+    <section class="image-hero" style="background-image: url('https://picsum.photos/1200/900');">
+      <h3>Voor al uw kappersproducten en benodigdheden</h3>
+    </section>
+
+    <!-- <section class="new-collection container px15">
       <div>
         <header class="col-md-12">
           <h2 class="align-center cl-accent">
@@ -37,6 +41,7 @@
           </h2>
         </header>
       </div>
+
       <div class="row center-xs">
         <lazy-hydrate :trigger-hydration="!loading" v-if="isLazyHydrateEnabled">
           <product-listing columns="4" :products="getEverythingNewCollection" />
@@ -55,7 +60,7 @@
       </div>
       <tile-links />
     </section>
-    <Onboard />
+    <Onboard /> -->
   </div>
 </template>
 
@@ -182,6 +187,51 @@ export default {
         height: 100%;
         object-fit: cover;
         border-radius: 6px;
+      }
+    }
+  }
+
+  section.image-hero {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(1px);
+    }
+
+    h3 {
+      color: #FFFFFF;
+      text-shadow: 0px 8px 15px #00000029;
+      display: flex;
+      flex-direction: row;
+      width: 90%;
+      font-size: 38px;
+      line-height: 50px;
+      z-index: 1;
+
+      &::before, &::after {
+        content: "";
+        flex: 1 1;
+        border-bottom: 2px solid #fff;
+        margin: auto;
+      }
+
+      &::before {
+        margin-right: 3rem;
+      }
+
+      &::after {
+        margin-left: 3rem;
       }
     }
   }
